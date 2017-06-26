@@ -1,0 +1,54 @@
+
+int(200)
+array(1) {
+  [0]=>
+  string(16) "application/json"
+}
+array(12) {
+  ["id"]=>
+  int(18055)
+  ["time_id"]=>
+  int(15457)
+  ["address_id"]=>
+  int(15796)
+  ["type"]=>
+  string(11) "MeetingItem"
+  ["details"]=>
+  string(7) "Format:"
+  ["meeting_type"]=>
+  string(2) "AA"
+  ["meeting_name"]=>
+  string(15) "Unnamed Meeting"
+  ["language"]=>
+  string(1) "."
+  ["raw_address"]=>
+  string(41) "San Diego, 90 Day Avenue, san_diego, , CA"
+  ["location"]=>
+  string(9) "San Diego"
+  ["address"]=>
+  array(7) {
+    ["id"]=>
+    int(15796)
+    ["street"]=>
+    string(0) ""
+    ["zip"]=>
+    string(5) "92103"
+    ["city"]=>
+    string(9) "San Diego"
+    ["state_abbr"]=>
+    string(2) "CA"
+    ["lat"]=>
+    string(9) "32.746085"
+    ["lng"]=>
+    string(11) "-117.170517"
+  }
+  ["time"]=>
+  array(3) {
+    ["id"]=>
+    int(15457)
+    ["day"]=>
+    string(6) "sunday"
+    ["hour"]=>
+    int(1000)
+  }
+}
