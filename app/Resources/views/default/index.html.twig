@@ -4,25 +4,32 @@
     <div id="wrapper">
         <div id="container">
             <div id="status">
-                <p>
-                    You can find meetings near you at the following locations:
-                <ul>
-                    {% for meeting in meetings %}
-                        <li>
-                            distance: {{ meeting.distance }}<br />
-                            name: {{ meeting.meeting_name }}<br />
-                            address: {{ meeting.raw_address }}<br />
-                        </li>
-                    {% endfor %}
-                </ul>
-                </p>
+                {% if meetings %}
+                    <p>
+                        You can find meetings near you at the following locations:
+                    <ul>
+                        {% for meeting in meetings %}
+                            <li>
+                                distance: {{ meeting.distance }}<br/>
+                                name: {{ meeting.meeting_name }}<br/>
+                                address: {{ meeting.raw_address }}<br/>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    </p>
+                {% else %}
+                    <p>
+                        No meetings could be found with your specified criteria.
+                    </p>
+                {% endif %}
+
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 {% endblock %}
 
 {% block javascripts %}

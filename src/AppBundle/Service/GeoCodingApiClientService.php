@@ -47,11 +47,17 @@ class GeoCodingApiClientService
         $googleURL = 'https://maps.googleapis.com/maps/api/geocode/json?';
         $googleFull = $googleURL . $query;
 
+
         $googleClient = new \GuzzleHttp\Client();
         $res = $googleClient->request('GET', $googleFull);
 
         $responseJson = $res->getBody()->getContents();
-        $sourceLocation = json_decode($responseJson, true)['results'][0]['geometry']['location'];
+
+        $results = json_decode($responseJson, true)['results'];
+        if (count($results)===0){
+            throw new \Exception("Location could not be determined for address");
+        }
+        $sourceLocation = $results[0]['geometry']['location'];
         return $sourceLocation;
     }
 
